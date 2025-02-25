@@ -5,6 +5,7 @@ import 'package:meals/config/models/models.dart';
 import 'package:meals/presentation/screens/home/widget/date_widget.dart';
 
 import 'package:meals/presentation/screens/home/widget/graphic_info.dart';
+import 'package:meals/presentation/screens/home/widget/rounded_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -24,6 +25,15 @@ class HomeScreen extends StatelessWidget {
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {},
           ),
+          actions: [
+            TextButton(
+                onPressed: () {},
+                child: Text('Add',
+                    style: AppTypography.body.copyWith(
+                        color: AppColors.primary,
+                        fontWeight: FontWeight.w500,
+                        height: 1.0))),
+          ],
         ),
         body: _HomeScreenView());
   }
@@ -38,7 +48,15 @@ class _HomeScreenView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: [DateWitget(), GraphipInfo()],
+        children: [
+          DateWitget(),
+          GraphipInfo(),
+          SizedBox(height: 16),
+          RoundedButton(
+            text: 'Nutrition Information',
+            onPressed: () {},
+          )
+        ],
       ),
     );
   }
