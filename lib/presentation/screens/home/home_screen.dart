@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:meals/config/models/models.dart';
-
-import 'package:meals/presentation/screens/home/widget/date_widget.dart';
-
-import 'package:meals/presentation/screens/home/widget/graphic_info.dart';
-import 'package:meals/presentation/screens/home/widget/rounded_button.dart';
+import 'package:meals/presentation/screens/home/widget/widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -55,7 +51,13 @@ class _HomeScreenView extends StatelessWidget {
           RoundedButton(
             text: 'Nutrition Information',
             onPressed: () {},
-          )
+          ),
+          Divider(
+            color: Colors.grey[300],
+            thickness: 1.8,
+            height: 30,
+          ),
+          LogMeals(),
         ],
       ),
     );
