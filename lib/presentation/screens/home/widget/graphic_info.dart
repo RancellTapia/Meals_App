@@ -23,17 +23,17 @@ class GraphipInfo extends StatelessWidget {
           children: [
             NutrientChart(
               chartName: NutritionChartName.carbs,
-              nutrientIngested: 0,
+              nutrientIngested: 900,
               dailyGoal: 1400,
             ),
             NutrientChart(
               chartName: NutritionChartName.protein,
-              nutrientIngested: 0,
+              nutrientIngested: 560,
               dailyGoal: 1400,
             ),
             NutrientChart(
               chartName: NutritionChartName.fat,
-              nutrientIngested: 0,
+              nutrientIngested: 450,
               dailyGoal: 1400,
             ),
           ],

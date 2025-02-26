@@ -26,6 +26,7 @@ class LogMeals extends StatelessWidget {
             MealType(mealType: 'Lunch'),
             MealType(mealType: 'Dinner'),
             MealType(mealType: 'Snacks'),
+            SizedBox(height: 20),
           ],
         ),
       ),
