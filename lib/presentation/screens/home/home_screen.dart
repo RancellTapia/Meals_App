@@ -9,36 +9,50 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Meals',
-            style: AppTypography.h2.copyWith(
-              color: AppColors.textPrimary,
-              fontWeight: FontWeight.w500,
+      appBar: AppBar(
+        title: Text(
+          'Meals',
+          style: AppTypography.h2.copyWith(
+            color: AppColors.textPrimary,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () {},
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              'Add',
+              style: AppTypography.body.copyWith(
+                color: AppColors.primary,
+                fontWeight: FontWeight.w500,
+                height: 1.0,
+              ),
             ),
           ),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
-            onPressed: () {},
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {},
-                child: Text('Add',
-                    style: AppTypography.body.copyWith(
-                        color: AppColors.primary,
-                        fontWeight: FontWeight.w500,
-                        height: 1.0))),
-          ],
-        ),
-        body: _HomeScreenView());
+        ],
+      ),
+      body: _HomeScreenView(),
+    );
   }
 }
 
 class _HomeScreenView extends StatelessWidget {
-  const _HomeScreenView({
-    super.key,
-  });
+  const _HomeScreenView({super.key});
+
+  void _showNutritionModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (context) => const MealDetailsModal(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,10 +61,10 @@ class _HomeScreenView extends StatelessWidget {
         children: [
           DateWitget(),
           GraphipInfo(),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           RoundedButton(
             text: 'Nutrition Information',
-            onPressed: () {},
+            onPressed: () => _showNutritionModal(context),
           ),
           Divider(
             color: Colors.grey[300],
