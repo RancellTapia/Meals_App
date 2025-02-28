@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:meals/config/models/models.dart';
-import 'package:meals/presentation/screens/home/widget/widget.dart';
+import 'package:meals/presentation/screens/log_meal/widget/widget.dart';
 
 class _AppColors {
   static const Color black = Color(0xFF000000);

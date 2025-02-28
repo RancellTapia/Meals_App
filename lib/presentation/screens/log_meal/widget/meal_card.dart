@@ -37,7 +37,7 @@ class MealCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.push('/meal-info/$mealName');
+        context.push('/fool-detail/$mealName');
       },
       child: Container(
         margin: const EdgeInsets.only(top: 10),

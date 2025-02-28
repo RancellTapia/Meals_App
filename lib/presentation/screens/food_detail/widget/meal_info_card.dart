@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:meals/config/models/models.dart';
-import 'package:meals/presentation/screens/meal_info/widget/widget.dart';
+import 'package:meals/presentation/screens/food_detail/widget/widget.dart';
 
 class _AppColors {
   static const Color white = Color(0xFFFFFFFF);

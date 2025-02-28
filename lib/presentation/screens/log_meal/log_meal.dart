@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:meals/config/models/models.dart';
-import 'package:meals/presentation/screens/home/widget/widget.dart';
+import 'package:meals/presentation/screens/log_meal/widget/widget.dart';
 
 class _AppColors {
   static const Color primary = Color(0xFF0A4A4B);
@@ -28,8 +28,8 @@ class _AppTypography {
   );
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class LogMeal extends StatelessWidget {
+  const LogMeal({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -62,13 +62,13 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: _HomeScreenView(),
+      body: _LogMealView(),
     );
   }
 }
 
-class _HomeScreenView extends StatelessWidget {
-  const _HomeScreenView({super.key});
+class _LogMealView extends StatelessWidget {
+  const _LogMealView({super.key});
 
   void _showNutritionModal(BuildContext context) {
     showModalBottomSheet(

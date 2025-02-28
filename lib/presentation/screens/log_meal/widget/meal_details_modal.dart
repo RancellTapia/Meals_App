@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:meals/presentation/screens/home/widget/widget.dart';
+import 'package:meals/presentation/screens/log_meal/widget/widget.dart';
 import 'package:meals/config/models/models.dart';
 
 class _AppColors {

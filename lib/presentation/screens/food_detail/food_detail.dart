@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:meals/config/models/models.dart';
-import 'package:meals/presentation/screens/home/widget/widget.dart';
-import 'package:meals/presentation/screens/meal_info/widget/widget.dart';
+import 'package:meals/presentation/screens/log_meal/widget/widget.dart';
+import 'package:meals/presentation/screens/food_detail/widget/widget.dart';
 
 class _AppColors {
   static const Color primary = Color(0xFF0A4A4B);
@@ -31,10 +31,10 @@ class _AppTypography {
   );
 }
 
-class MealInfo extends StatelessWidget {
+class FoodDetail extends StatelessWidget {
   final String mealName;
 
-  const MealInfo({super.key, required this.mealName});
+  const FoodDetail({super.key, required this.mealName});
 
   @override
   Widget build(BuildContext context) {
@@ -62,13 +62,13 @@ class MealInfo extends StatelessWidget {
                   size: 24, color: _AppColors.primary))
         ],
       ),
-      body: _MealInfoView(),
+      body: _FoodDetailView(),
     );
   }
 }
 
-class _MealInfoView extends StatelessWidget {
-  const _MealInfoView({super.key});
+class _FoodDetailView extends StatelessWidget {
+  const _FoodDetailView({super.key});
 
   void _showNutritionModal(BuildContext context) {
     showModalBottomSheet(
