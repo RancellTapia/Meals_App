@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:meals/config/models/models.dart';
+
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+class _AppColors {
+  static const Color primary = Color(0xFF0A4A4B);
+  static const Color secondary = Color(0xFFEFF8F8);
+}
 
 class AddButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -12,22 +18,19 @@ class AddButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 24,
-      height: 24,
+      width: 32,
+      height: 32,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.secondary,
+          backgroundColor: _AppColors.secondary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4),
           ),
           padding: EdgeInsets.zero, //
         ),
-        child: Icon(
-          Icons.add,
-          color: AppColors.primary,
-          size: 22,
-        ),
+        child:
+            FaIcon(FontAwesomeIcons.plus, size: 20, color: _AppColors.primary),
       ),
     );
   }

@@ -3,6 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:meals/presentation/screens/home/widget/widget.dart';
 import 'package:meals/config/models/models.dart';
 
+class _AppColors {
+  static const Color primary = Color(0xFF0A4A4B);
+  static const Color black = Color(0xFF000000);
+}
+
+class _AppTypography {
+  static const double heading2 = 20.0;
+
+  static const TextStyle h3 = TextStyle(
+    fontSize: heading2,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+}
+
 class MealDetailsModal extends StatelessWidget {
   const MealDetailsModal({super.key});
 
@@ -21,16 +36,16 @@ class MealDetailsModal extends StatelessWidget {
               ),
               Text(
                 "Meal Details",
-                style: AppTypography.h2.copyWith(
-                  color: AppColors.textPrimary,
+                style: _AppTypography.h3.copyWith(
+                  color: _AppColors.black,
                   fontWeight: FontWeight.w500,
                 ),
               ),
               TextButton(
                 onPressed: () => Navigator.pop(context),
                 child: Text("Done",
-                    style: AppTypography.body.copyWith(
-                      color: AppColors.primary,
+                    style: _AppTypography.h3.copyWith(
+                      color: _AppColors.primary,
                       fontWeight: FontWeight.w500,
                       height: 1.0,
                     )),
@@ -42,7 +57,7 @@ class MealDetailsModal extends StatelessWidget {
             thickness: 1.8,
             height: 10,
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 16),
           NutritionInfoList(nutritionData: NutritionData.items),
         ],
       ),

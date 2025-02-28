@@ -1,6 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:meals/config/models/models.dart';
 import 'package:meals/presentation/screens/meal_info/widget/widget.dart';
+
+class _AppColors {
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color black = Color(0xFF000000);
+}
+
+class _AppTypography {
+  static const double caption = 14.0;
+
+  static const TextStyle captionStyle = TextStyle(
+    fontSize: caption,
+    fontWeight: FontWeight.w300,
+    color: AppColors.grey,
+  );
+}
 
 class MealInfoCard extends StatelessWidget {
   const MealInfoCard({super.key});
@@ -8,16 +25,17 @@ class MealInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           _CardInfo(
             title: 'Date',
-            icon: Icons.calendar_today,
+            icon: FaIcon(FontAwesomeIcons.calendar,
+                size: 20, color: _AppColors.black),
             value: 'Tue, Feb 25, 2025',
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
           SizedBox(
             width: double.infinity,
             child: Row(
@@ -25,7 +43,8 @@ class MealInfoCard extends StatelessWidget {
                 Expanded(
                   child: _CardInfo(
                     title: 'Meal Type',
-                    icon: Icons.keyboard_arrow_down_sharp,
+                    icon: FaIcon(FontAwesomeIcons.caretDown,
+                        size: 20, color: _AppColors.black),
                     value: 'Breakfast',
                     iconSize: 30,
                   ),
@@ -40,15 +59,15 @@ class MealInfoCard extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
           Counter(
             label: 'Serving',
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
           Counter(
             label: 'Fractional',
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 40),
         ],
       ),
     );
@@ -58,11 +77,10 @@ class MealInfoCard extends StatelessWidget {
 class _CardInfo extends StatelessWidget {
   final String title;
   final String value;
-  final IconData? icon;
+  final FaIcon? icon;
   final double iconSize;
 
   const _CardInfo({
-    super.key,
     required this.title,
     required this.value,
     this.icon,
@@ -76,8 +94,8 @@ class _CardInfo extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppTypography.captionStyle.copyWith(
-            color: AppColors.textPrimary,
+          style: _AppTypography.captionStyle.copyWith(
+            color: _AppColors.black,
             fontWeight: FontWeight.w600,
             height: 1.0,
           ),
@@ -86,7 +104,7 @@ class _CardInfo extends StatelessWidget {
           margin: const EdgeInsets.only(top: 10),
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: AppColors.background ?? Colors.white,
+            color: _AppColors.white,
             borderRadius: BorderRadius.circular(8),
             boxShadow: [
               BoxShadow(
@@ -101,8 +119,8 @@ class _CardInfo extends StatelessWidget {
             children: [
               Text(
                 value,
-                style: AppTypography.captionStyle.copyWith(
-                  color: AppColors.textPrimary,
+                style: _AppTypography.captionStyle.copyWith(
+                  color: _AppColors.black,
                   fontWeight: FontWeight.w500,
                   height: 1.0,
                 ),
@@ -112,7 +130,7 @@ class _CardInfo extends StatelessWidget {
                 width: 28,
                 height: 28,
                 child: icon != null
-                    ? Icon(icon, color: AppColors.textPrimary, size: iconSize)
+                    ? Icon(icon?.icon, color: _AppColors.black, size: iconSize)
                     : null, //
               ),
             ],

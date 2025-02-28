@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:meals/config/models/models.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+class _AppColors {
+  static const Color primary = Color(0xFF0A4A4B);
+  static const Color secondary = Color(0xFFEFF8F8);
+}
 
 class Counter extends StatefulWidget {
   final String label;
@@ -49,7 +54,10 @@ class _CounterState extends State<Counter> {
         ),
         Row(
           children: [
-            CircularButton(Icons.remove, _decrement),
+            CircularButton(
+                FaIcon(FontAwesomeIcons.minus,
+                    size: 15, color: _AppColors.primary),
+                _decrement),
             SizedBox(
               width: 30, //
               child: Center(
@@ -60,23 +68,26 @@ class _CounterState extends State<Counter> {
                 ),
               ),
             ),
-            CircularButton(Icons.add, _increment),
+            CircularButton(
+                FaIcon(FontAwesomeIcons.plus,
+                    size: 15, color: _AppColors.primary),
+                _increment),
           ],
         ),
       ],
     );
   }
 
-  Widget CircularButton(IconData icon, VoidCallback onPressed) {
+  Widget CircularButton(FaIcon icon, VoidCallback onPressed) {
     return Container(
-      width: 30,
-      height: 30,
+      width: 24,
+      height: 24,
       decoration: BoxDecoration(
-        color: AppColors.secondary,
-        borderRadius: BorderRadius.circular(15),
+        color: _AppColors.secondary,
+        borderRadius: BorderRadius.circular(4),
       ),
       child: IconButton(
-        icon: Icon(icon, color: AppColors.primary),
+        icon: Icon(icon.icon, color: _AppColors.primary),
         onPressed: onPressed,
         padding: EdgeInsets.zero,
         constraints: const BoxConstraints(minWidth: 20, minHeight: 20),

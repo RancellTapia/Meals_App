@@ -12,7 +12,6 @@ class GraphipInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 16),
         CaloriesChart(
           caloriesBurned: 965,
           dailyGoal: 1400,

@@ -2,6 +2,21 @@ import 'package:flutter/material.dart';
 
 import 'package:meals/config/models/models.dart';
 
+class _AppColors {
+  static const Color black = Color(0xFF000000);
+  static const Color grey = Color(0xFF979797);
+}
+
+class _AppTypography {
+  static const double bodyText = 18.0;
+
+  static const TextStyle body = TextStyle(
+    fontSize: bodyText,
+    fontWeight: FontWeight.normal,
+    color: AppColors.black,
+  );
+}
+
 class NutritionInfoList extends StatelessWidget {
   final List<Map<String, dynamic>> nutritionData;
 
@@ -22,21 +37,15 @@ class NutritionInfoList extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(item['name'],
-                  style: AppTypography.body.copyWith(
-                    color: item['isSubItem']
-                        ? AppColors.textSecondary
-                        : AppColors.textPrimary,
-                    fontWeight:
-                        item['isSubItem'] ? FontWeight.normal : FontWeight.bold,
+                  style: _AppTypography.body.copyWith(
+                    color:
+                        item['isSubItem'] ? _AppColors.grey : _AppColors.black,
                     height: 1.0,
                   )),
               Text('${item['value']} ${item['unit']}',
-                  style: AppTypography.body.copyWith(
-                    color: item['isSubItem']
-                        ? AppColors.textSecondary
-                        : AppColors.textPrimary,
-                    fontWeight:
-                        item['isSubItem'] ? FontWeight.normal : FontWeight.bold,
+                  style: _AppTypography.body.copyWith(
+                    color:
+                        item['isSubItem'] ? _AppColors.grey : _AppColors.black,
                     height: 1.2,
                   )),
             ],

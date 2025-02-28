@@ -1,7 +1,32 @@
 import 'package:flutter/material.dart';
 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:meals/config/models/models.dart';
 import 'package:meals/presentation/screens/home/widget/widget.dart';
+
+class _AppColors {
+  static const Color primary = Color(0xFF0A4A4B);
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color black = Color(0xFF000000);
+}
+
+class _AppTypography {
+  static const double heading2 = 20.0;
+  static const double bodyText = 18.0;
+
+  static const TextStyle h3 = TextStyle(
+    fontSize: heading2,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+
+  static const TextStyle body = TextStyle(
+    fontSize: bodyText,
+    fontWeight: FontWeight.normal,
+    color: AppColors.black,
+  );
+}
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,17 +34,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: AppBar(
+        backgroundColor: _AppColors.white,
         title: Text(
           'Meals',
-          style: AppTypography.h2.copyWith(
-            color: AppColors.textPrimary,
+          style: _AppTypography.h3.copyWith(
+            color: _AppColors.black,
             fontWeight: FontWeight.w500,
           ),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
+          icon: FaIcon(FontAwesomeIcons.chevronLeft,
+              size: 24, color: _AppColors.black),
           onPressed: () {},
         ),
         actions: [
@@ -27,8 +53,8 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {},
             child: Text(
               'Add',
-              style: AppTypography.body.copyWith(
-                color: AppColors.primary,
+              style: _AppTypography.body.copyWith(
+                color: _AppColors.primary,
                 fontWeight: FontWeight.w500,
                 height: 1.0,
               ),
@@ -61,6 +87,7 @@ class _HomeScreenView extends StatelessWidget {
       child: Column(
         children: [
           DateWitget(),
+          const SizedBox(height: 10),
           GraphipInfo(),
           const SizedBox(height: 16),
           RoundedButton(

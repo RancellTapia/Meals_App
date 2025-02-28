@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
 
-import 'package:meals/config/models/models.dart';
+class _AppColors {
+  static const Color primary = Color(0xFF0A4A4B);
+  static const Color white = Color(0xFFFFFFFF);
+}
+
+class _AppTypography {
+  static const double bodyText = 18.0;
+
+  static const TextStyle body = TextStyle(
+    fontSize: bodyText,
+    fontWeight: FontWeight.normal,
+  );
+}
 
 class ActiveButton extends StatelessWidget {
   final String text;
@@ -18,7 +30,7 @@ class ActiveButton extends StatelessWidget {
       width: double.infinity,
       child: TextButton(
         style: TextButton.styleFrom(
-          backgroundColor: AppColors.primary,
+          backgroundColor: _AppColors.primary,
           padding: const EdgeInsets.symmetric(vertical: 12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
@@ -27,11 +39,8 @@ class ActiveButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(
-            color: AppColors.neutral,
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
+          style: _AppTypography.body
+              .copyWith(color: _AppColors.white, fontWeight: FontWeight.w500),
         ),
       ),
     );

@@ -1,8 +1,13 @@
+import 'package:flutter/material.dart';
+
 import 'dart:math';
 
-import 'package:flutter/material.dart';
-import 'package:meals/config/models/models.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+
+class _AppColors {
+  static const Color primary = Color(0xFF0A4A4B);
+  static const Color neutral = Color(0xFFEDEEF1);
+}
 
 class RadialChartWidget extends StatelessWidget {
   final double value;
@@ -11,12 +16,12 @@ class RadialChartWidget extends StatelessWidget {
   final Widget? centerWidget;
 
   const RadialChartWidget({
-    Key? key,
+    super.key,
     required this.value,
     required this.maxValue,
     this.size = 200.0,
     this.centerWidget,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +37,7 @@ class RadialChartWidget extends StatelessWidget {
           series: <CircularSeries>[
             RadialBarSeries<ChartData, String>(
               dataSource: [
-                ChartData('Progress', percentage, AppColors.primary),
+                ChartData('Progress', percentage, _AppColors.primary),
               ],
               pointColorMapper: (ChartData data, _) => data.color,
               xValueMapper: (ChartData data, _) => data.label,
@@ -42,7 +47,7 @@ class RadialChartWidget extends StatelessWidget {
               radius: '100%',
               cornerStyle:
                   isFull ? CornerStyle.bothFlat : CornerStyle.bothCurve,
-              trackColor: AppColors.neutral,
+              trackColor: _AppColors.neutral,
               trackOpacity: 1.0,
               dataLabelSettings: const DataLabelSettings(isVisible: false),
             ),

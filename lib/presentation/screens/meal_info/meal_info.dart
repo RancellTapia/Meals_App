@@ -1,10 +1,35 @@
 import 'package:flutter/material.dart';
 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:meals/config/models/models.dart';
 import 'package:meals/presentation/screens/home/widget/widget.dart';
 import 'package:meals/presentation/screens/meal_info/widget/widget.dart';
+
+class _AppColors {
+  static const Color primary = Color(0xFF0A4A4B);
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color black = Color(0xFF000000);
+  static const Color error = Color(0xFFE22424);
+}
+
+class _AppTypography {
+  static const double heading2 = 20.0;
+  static const double bodyText = 18.0;
+
+  static const TextStyle h3 = TextStyle(
+    fontSize: heading2,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+
+  static const TextStyle body = TextStyle(
+    fontSize: bodyText,
+    fontWeight: FontWeight.normal,
+    color: AppColors.black,
+  );
+}
 
 class MealInfo extends StatelessWidget {
   final String mealName;
@@ -14,17 +39,18 @@ class MealInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
       appBar: AppBar(
+        backgroundColor: _AppColors.white,
         title: Text(
           mealName,
-          style: AppTypography.h2.copyWith(
-            color: AppColors.textPrimary,
+          style: _AppTypography.h3.copyWith(
+            color: _AppColors.black,
             fontWeight: FontWeight.w500,
           ),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
+          icon: FaIcon(FontAwesomeIcons.chevronLeft,
+              size: 24, color: _AppColors.black),
           onPressed: () {
             context.pop();
           },
@@ -32,7 +58,8 @@ class MealInfo extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {},
-              icon: Icon(Icons.star, color: AppColors.primary))
+              icon: FaIcon(FontAwesomeIcons.solidStar,
+                  size: 24, color: _AppColors.primary))
         ],
       ),
       body: _MealInfoView(),
@@ -82,8 +109,8 @@ class _MealInfoView extends StatelessWidget {
           },
           child: Text(
             'Remove from Meal',
-            style: AppTypography.body.copyWith(
-              color: AppColors.error,
+            style: _AppTypography.body.copyWith(
+              color: _AppColors.error,
               fontWeight: FontWeight.w500,
               height: 1.0,
             ),

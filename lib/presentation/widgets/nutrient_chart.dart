@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
+
 import 'package:meals/config/enums/nutrition_chart.dart';
 import 'package:meals/config/models/models.dart';
-
 import 'package:meals/presentation/widgets/radial_chart.dart';
+
+class _AppColors {
+  static const Color black = Color(0xFF000000);
+}
+
+class _AppTypography {
+  static const double caption = 14.0;
+
+  static const TextStyle captionStyle = TextStyle(
+    fontSize: caption,
+    fontWeight: FontWeight.w300,
+    color: AppColors.grey,
+  );
+}
 
 class NutrientChart extends StatelessWidget {
   final double nutrientIngested;
@@ -38,8 +52,8 @@ class NutrientChart extends StatelessWidget {
                     nutrientIngested == 0
                         ? '--g'
                         : '${nutrientIngested.toInt()}g',
-                    style: AppTypography.body.copyWith(
-                      color: AppColors.textPrimary,
+                    style: _AppTypography.captionStyle.copyWith(
+                      color: _AppColors.black,
                       fontWeight: FontWeight.w500,
                     )),
               ),
@@ -47,8 +61,8 @@ class NutrientChart extends StatelessWidget {
           ),
           Text(
             chartName.nutritionChartLabel,
-            style: AppTypography.captionStyle.copyWith(
-                color: AppColors.textPrimary,
+            style: _AppTypography.captionStyle.copyWith(
+                color: _AppColors.black,
                 fontWeight: FontWeight.w600,
                 height: 1.0),
           ),

@@ -1,6 +1,28 @@
 import 'package:flutter/material.dart';
+
 import 'package:meals/config/models/models.dart';
 import 'package:meals/presentation/screens/home/widget/widget.dart';
+
+class _AppColors {
+  static const Color black = Color(0xFF000000);
+}
+
+class _AppTypography {
+  static const double heading1 = 24.0;
+  static const double heading2 = 20.0;
+
+  static const TextStyle h2 = TextStyle(
+    fontSize: heading1,
+    fontWeight: FontWeight.bold,
+    color: AppColors.black,
+  );
+
+  static const TextStyle h3 = TextStyle(
+    fontSize: heading2,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+}
 
 class LogMeals extends StatelessWidget {
   const LogMeals({super.key});
@@ -17,8 +39,8 @@ class LogMeals extends StatelessWidget {
           children: [
             Text(
               'Log my meals',
-              style: AppTypography.h2.copyWith(
-                color: AppColors.textPrimary,
+              style: _AppTypography.h2.copyWith(
+                color: _AppColors.black,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -61,8 +83,8 @@ class _MealTypeState extends State<MealType> {
           children: [
             Text(
               widget.mealType,
-              style: AppTypography.body.copyWith(
-                color: AppColors.textPrimary,
+              style: _AppTypography.h3.copyWith(
+                color: _AppColors.black,
                 fontWeight: FontWeight.w400,
               ),
             ),
