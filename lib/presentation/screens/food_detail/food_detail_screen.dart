@@ -32,10 +32,10 @@ class _AppTypography {
   );
 }
 
-class FoodDetail extends StatelessWidget {
+class FoodDetailScreen extends StatelessWidget {
   final String mealName;
 
-  const FoodDetail({super.key, required this.mealName});
+  const FoodDetailScreen({super.key, required this.mealName});
 
   @override
   Widget build(BuildContext context) {

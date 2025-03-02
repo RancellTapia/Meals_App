@@ -29,8 +29,8 @@ class _AppTypography {
   );
 }
 
-class LogMeal extends StatelessWidget {
-  const LogMeal({super.key});
+class LogMealScreen extends StatelessWidget {
+  const LogMealScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

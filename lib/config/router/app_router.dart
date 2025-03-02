@@ -5,13 +5,13 @@ import 'package:meals/presentation/screens/screens.dart';
 final appRouter = GoRouter(routes: [
   GoRoute(
     path: '/',
-    builder: (context, state) => const LogMeal(),
+    builder: (context, state) => const LogMealScreen(),
   ),
   GoRoute(
     path: '/fool-detail/:mealName',
     builder: (context, state) {
       final mealName = state.pathParameters['mealName']!;
-      return FoodDetail(mealName: mealName);
+      return FoodDetailScreen(mealName: mealName);
     },
   ),
   GoRoute(
