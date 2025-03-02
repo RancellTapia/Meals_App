@@ -58,71 +58,82 @@ class ScanBarcodeScreen extends StatelessWidget {
                 size: 24, color: _AppColors.black),
             onPressed: () => Navigator.pop(context)),
       ),
-      body: Container(
-        color: _AppColors.white,
-        child: Stack(children: [
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  //TODO: Replace with barcode image
-                  height: 300,
-                  width: double.infinity,
-                  color: _AppColors.grey,
-                ),
+      body: _ScanBarcodeView(),
+    );
+  }
+}
+
+class _ScanBarcodeView extends StatelessWidget {
+  const _ScanBarcodeView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: _AppColors.white,
+      child: Stack(children: [
+        Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                //TODO: Replace with barcode image
+                height: 300,
+                width: double.infinity,
+                color: _AppColors.grey,
               ),
-              Container(
-                width: 42,
-                height: 42,
-                decoration: BoxDecoration(
-                  color: _AppColors.secondary,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Center(
-                  child: FaIcon(FontAwesomeIcons.check,
-                      size: 24, color: _AppColors.primary),
-                ),
-              ),
-              SizedBox(height: 20),
-              Text(
-                'Barcode Found',
-                style: _AppTypography.h2.copyWith(
-                    color: _AppColors.black,
-                    fontWeight: FontWeight.w500,
-                    height: 1),
-              ),
-              SizedBox(height: 8),
-              Text(
-                '12345678905',
-                style: _AppTypography.body.copyWith(
-                    color: _AppColors.black,
-                    fontWeight: FontWeight.w400,
-                    height: 1),
-              ),
-            ],
-          ),
-          Positioned(
-            bottom: 40,
-            left: 0,
-            right: 0,
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width,
-              child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ActiveButton(text: "Add Food", onPressed: () {}),
-                      const SizedBox(height: 10),
-                      OutlineButton(
-                          text: "Input Barcode Manually", onPressed: () {}),
-                    ],
-                  )),
             ),
+            Container(
+              width: 42,
+              height: 42,
+              decoration: BoxDecoration(
+                color: _AppColors.secondary,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Center(
+                child: FaIcon(FontAwesomeIcons.check,
+                    size: 24, color: _AppColors.primary),
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Barcode Found',
+              style: _AppTypography.h2.copyWith(
+                  color: _AppColors.black,
+                  fontWeight: FontWeight.w500,
+                  height: 1),
+            ),
+            SizedBox(height: 8),
+            Text(
+              '12345678905',
+              style: _AppTypography.body.copyWith(
+                  color: _AppColors.black,
+                  fontWeight: FontWeight.w400,
+                  height: 1),
+            ),
+          ],
+        ),
+        Positioned(
+          bottom: 40,
+          left: 0,
+          right: 0,
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ActiveButton(text: "Add Food", onPressed: () {}),
+                    const SizedBox(height: 10),
+                    OutlineButton(
+                        text: "Input Barcode Manually", onPressed: () {}),
+                  ],
+                )),
           ),
-        ]),
-      ),
+        ),
+      ]),
     );
   }
 }
