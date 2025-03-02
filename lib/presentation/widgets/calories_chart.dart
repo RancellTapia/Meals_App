@@ -49,7 +49,7 @@ class CaloriesChart extends StatelessWidget {
             Text('CALORIES',
                 style: _AppTypography.body.copyWith(
                     color: _AppColors.black, fontWeight: FontWeight.w600)),
-            Text('${caloriesBurned.toInt()}',
+            Text(caloriesBurned == 0 ? "--" : '${caloriesBurned.toInt()}',
                 style: _AppTypography.h1.copyWith(
                     color: _AppColors.black, fontWeight: FontWeight.w700)),
             SizedBox(height: 8),
