@@ -14,4 +14,8 @@ final appRouter = GoRouter(routes: [
       return FoodDetail(mealName: mealName);
     },
   ),
+  GoRoute(
+    path: '/add-food',
+    builder: (context, state) => const AddFoodScreen(),
+  ),
 ]);

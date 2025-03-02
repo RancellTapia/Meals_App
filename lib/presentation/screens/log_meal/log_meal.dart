@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:meals/config/models/models.dart';
-import 'package:meals/presentation/screens/log_meal/widget/widget.dart';
+import 'package:meals/presentation/screens/log_meal/widgets/widgets.dart';
 
 class _AppColors {
   static const Color primary = Color(0xFF0A4A4B);
@@ -50,7 +51,9 @@ class LogMeal extends StatelessWidget {
         ),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              context.push('/add-food');
+            },
             child: Text(
               'Add',
               style: _AppTypography.body.copyWith(
