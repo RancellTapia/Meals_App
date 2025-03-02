@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:meals/presentation/screens/add_food/widgets/widgets.dart';
 import 'package:meals/presentation/widgets/widgets.dart';
 
@@ -72,7 +75,9 @@ class _AddFoodScreenState extends State<AddFoodScreen>
           IconButton(
             icon: FaIcon(FontAwesomeIcons.barcode,
                 size: 24, color: _AppColors.primary),
-            onPressed: () {},
+            onPressed: () {
+              context.push('/scan-barcode');
+            },
           ),
         ],
       ),
