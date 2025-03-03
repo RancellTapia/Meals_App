@@ -22,4 +22,8 @@ final appRouter = GoRouter(routes: [
     path: '/scan-barcode',
     builder: (context, state) => const ScanBarcodeScreen(),
   ),
+  GoRoute(
+    path: '/add-new-food',
+    builder: (context, state) => const AddNewFoodScreen(),
+  ),
 ]);

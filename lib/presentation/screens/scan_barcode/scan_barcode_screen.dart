@@ -125,7 +125,11 @@ class _ScanBarcodeView extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ActiveButton(text: "Add Food", onPressed: () {}),
+                    ActiveButton(
+                        text: "Add Food",
+                        onPressed: () {
+                          context.push('/add-new-food');
+                        }),
                     const SizedBox(height: 10),
                     OutlineButton(
                         text: "Input Barcode Manually", onPressed: () {}),
