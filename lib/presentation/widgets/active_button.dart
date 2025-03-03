@@ -28,10 +28,10 @@ class ActiveButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
+      height: 48,
       child: TextButton(
         style: TextButton.styleFrom(
           backgroundColor: _AppColors.primary,
-          padding: const EdgeInsets.symmetric(vertical: 12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),

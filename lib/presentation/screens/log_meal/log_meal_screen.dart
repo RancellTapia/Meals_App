@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:meals/config/models/models.dart';
 import 'package:meals/presentation/screens/log_meal/widgets/widgets.dart';
+import 'package:meals/presentation/widgets/widgets.dart';
 
 class _AppColors {
   static const Color primary = Color(0xFF0A4A4B);

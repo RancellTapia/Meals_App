@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:meals/presentation/screens/add_new_food/widgets/add_image.dart';
 import 'package:meals/presentation/widgets/widgets.dart';
 
 class _AppColors {

@@ -28,10 +28,10 @@ class OutlineButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
+      height: 48,
       child: TextButton(
         style: TextButton.styleFrom(
           backgroundColor: _AppColors.white,
-          padding: const EdgeInsets.symmetric(vertical: 12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
             side: BorderSide(color: _AppColors.primary, width: 1),

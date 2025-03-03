@@ -196,12 +196,18 @@ class _AddFoodScreenState extends State<AddFoodScreen>
                     if (hasAddMealButton) ...[
                       Expanded(
                           child: OutlineButton(
-                              text: "Add Meal", onPressed: () {})),
+                              text: "Add Meal",
+                              onPressed: () {
+                                context.push('/add-meal');
+                              })),
                       const SizedBox(width: 10),
                     ],
                     Expanded(
-                      child:
-                          ActiveButton(text: "Add New Food", onPressed: () {}),
+                      child: ActiveButton(
+                          text: "Add New Food",
+                          onPressed: () {
+                            context.push('/add-new-food');
+                          }),
                     ),
                   ],
                 )),
