@@ -169,16 +169,23 @@ class _AddFoodScreenState extends State<AddFoodScreen>
 
     return Stack(
       children: [
-        ListView.separated(
+        ListView.builder(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          itemCount: foodItems.length,
-          separatorBuilder: (_, __) => const SizedBox(height: 20),
+          itemCount: foodItems.length + 1,
           itemBuilder: (context, index) {
+            if (index == foodItems.length) {
+              return const SizedBox(height: 100);
+            }
             final food = foodItems[index];
-            return FoodItem(
-              name: food["name"],
-              calories: food["calories"],
-              isFavorite: food["isFavorite"],
+            return Column(
+              children: [
+                FoodItem(
+                  name: food["name"],
+                  calories: food["calories"],
+                  isFavorite: food["isFavorite"],
+                ),
+                const SizedBox(height: 20),
+              ],
             );
           },
         ),
