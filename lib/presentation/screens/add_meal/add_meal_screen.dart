@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:meals/presentation/widgets/widgets.dart';
 
@@ -73,7 +74,9 @@ class _AddMealView extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AddImage(onTap: () {}),
+                  AddImage(onTap: () {
+                    context.push('/take-photo');
+                  }),
                   const SizedBox(width: 16),
                   Expanded(
                     child: CustomTextField(title: "Food Name"),

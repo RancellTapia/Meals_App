@@ -30,4 +30,8 @@ final appRouter = GoRouter(routes: [
     path: '/add-meal',
     builder: (context, state) => const AddMealScreen(),
   ),
+  GoRoute(
+    path: '/take-photo',
+    builder: (context, state) => const TakeAPhotoScreen(),
+  ),
 ]);
